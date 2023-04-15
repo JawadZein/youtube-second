@@ -1,4 +1,55 @@
 {
+  "version": "0.0.0-development",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test --passWithNoTests",
+    "lint": "tsdx lint",
+    "commit": "git-cz",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "semantic-release": "semantic-release --branches main"
+  },
+  "peerDependencies": {
+    "react": ">=16"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "name": "youtube-demo-second",
+  "author": "JawadZein",
+  "module": "dist/youtube-demo-second.esm.js",
+  "size-limit": [
+    {
+      "path": "dist/youtube-demo-second.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/youtube-demo-second.esm.js",
+      "limit": "10 KB"
+    }
+  ],
   "devDependencies": {
     "@babel/core": "^7.21.4",
     "@size-limit/preset-small-lib": "^8.2.4",
@@ -21,8 +72,9 @@
     "tslib": "^2.5.0",
     "typescript": "^5.0.4"
   },
-  "peerDependencies": {
-    "react": ">=16"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JawadZein/youtube-second.git"
   },
   "config": {
     "commitizen": {
