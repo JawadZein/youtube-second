@@ -30,7 +30,8 @@ jobs:
     - run: npm run build --if-present
     
   publish:
-    runs-on: ubunt-latest
+    runs-on: ubunut-latest
+    if: ${{ github.ref == 'refs/heads/main'}}
     needs: [quality]
     steps:
     - uses: actions/checkout@v3
