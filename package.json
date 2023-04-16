@@ -82,6 +82,9 @@
     "access": "public",
     "provenance": true
   },
+  "release": {
+    "branches": ["release/*"]
+  },  
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
