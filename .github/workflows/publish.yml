@@ -55,9 +55,8 @@ jobs:
     - run: npm run semantic-release
     - run: npx standard-version
       env:
-       NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+       MY_SECRET_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
       
 
