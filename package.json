@@ -83,8 +83,10 @@
     "provenance": true
   },
   "release": {
-    "branches": ["release/*"]
-  },  
+    "branches": [
+      "release/*"
+    ]
+  },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
