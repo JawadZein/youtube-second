@@ -1,6 +1,7 @@
 {
   "version": "0.0.0-development",
   "license": "MIT",
+  "type": "module",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "files": [
@@ -76,6 +77,10 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/JawadZein/youtube-second.git"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
   },
   "config": {
     "commitizen": {
