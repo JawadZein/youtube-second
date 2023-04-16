@@ -10,14 +10,17 @@ on:
     branches: '*'
     
 permissions:
-      contents: write
-      pages: write
-      id-token: write
+      contents: read
+
 
 jobs:
   quality:
 
     runs-on: ${{ matrix.os }}
+    
+    permissions:
+            pages: write
+            id-token: write
 
     strategy:
       matrix:
