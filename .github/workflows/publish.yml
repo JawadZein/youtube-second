@@ -5,7 +5,7 @@ name: Node.js CI
 
 on:
   push:
-    branches: '*'
+    branches: [main]
   pull_request:
     branches: '*'
     
@@ -55,6 +55,7 @@ jobs:
     - run: npm run semantic-release
     - run: npx standard-version
       env:
+       NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
