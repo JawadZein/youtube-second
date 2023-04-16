@@ -81,5 +81,50 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+
+  "release": {
+    "branches": ["main"],
+    "extends": "@semantic-release/npm",
+    "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}",
+    "verifyConditions": [
+      "@semantic-release/changelog",
+      "@semantic-release/git",
+      "@semantic-release/npm",
+      {
+        "path": "@semantic-release/exec",
+        "cmd": "npm run build"
+      },
+      {
+        "path": "@semantic-release/exec",
+        "cmd": "npm run test"
+      }
+    ],
+    "prepare": [
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      "@semantic-release/git",
+      {
+        "path": "@semantic-release/exec",
+        "cmd": "npm run build"
+      }
+    ],
+    "publish": [
+      {
+        "path": "@semantic-release/npm",
+        "npmPublish": true,
+        "tarballDir": "dist",
+        "pkgRoot": "dist"
+      },
+      {
+        "path": "@semantic-release/git",
+        "assets": ["CHANGELOG.md", "package.json", "package-lock.json"],
+        "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+      }
+    ],
+    "npmPublish": false,
+    "debug": false,
+    "failOnError": true
   }
 }
+
