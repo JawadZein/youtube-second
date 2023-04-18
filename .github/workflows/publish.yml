@@ -56,7 +56,7 @@ jobs:
     - run: npx standard-version
       env:
        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-       MY_SECRET_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+       MY_SECRET_TOKEN: ${{ secrets.MY_SECRET_TOKEN }}
       
       
 
