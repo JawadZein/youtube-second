@@ -1,0 +1,6 @@
+name: Deploy README
+
+on:
+  push:
+    branches:
+      - main
